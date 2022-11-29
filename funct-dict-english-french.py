@@ -1,11 +1,9 @@
-# Language selection
 select_language = input("enter the language you want to tranlate \n")
-
-    # Creating the dictionary english to french
-english_french = {
+	    
+# Creating the dictionary english to french
+english_french ={
     "beauty": "beaute",
     "hapiness" : "bonheur",
-    "love" : "amour",
     "heaven" : "paradis",
     "plum" : "prune",
     "pineapple " : "ananas",
@@ -15,11 +13,9 @@ english_french = {
     "goodbye" : "aurevoir",
     "beach" : "plage",
     "meat" : "viande"
-
-}
-    # Creating the dictionary french to english
-
-french_english = {
+    }
+# Creating the dictionary french to english	    
+french_english ={
     "beaute": "beauty",
     "bonheur": "hapiness",
     "amour": "love",
@@ -32,26 +28,33 @@ french_english = {
     "aurevoir": "goodbye",
     "plage": "beach",
     "viande": "meat"
- }
-
-    # User selecting french
+    }
+    	    
+# Defining the function User selecting French
 if select_language=="french":
-        english_word = input("Enter english word to lookup \n")
-        translate = english_french.get(english_word)
+    def translation(english_word):
         if english_word in english_french:
             print(translate)
-        elif english_word not in english_french:
+        else:
             print(f"{english_word}  not found in current dictionary")
 
-    # User selecting english
+    english_word = input("Enter english word to lookup \n")
+    translate = english_french.get(english_word)
+# Recalling  the function
+    translation(english_word)
+    
+# Defining the function when User selecting English
 elif select_language=="english":
-        french_word = input("Enter french word to lookup\n")
-        translation = french_english.get(french_word)
+    def translation(french_word):
         if french_word in french_english:
-            print(translation)
-        elif french_word not in french_english:
+            print(translate)
+        else:
             print(f"{french_word}  not found in current dictionary")
-
-    # if seletec language is not in the dictionary  
+	        
+    french_word = input("Enter french word to lookup\n")
+    translate = french_english.get(french_word)
+# Recalling the function
+    translation(french_word)
+    
 else:
-        print("Unable to locate desired language in current dictionary")
+    print("Unable to locate desired language in current dictionary")
